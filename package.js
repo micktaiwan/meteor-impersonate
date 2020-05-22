@@ -5,27 +5,28 @@ Package.describe({
   git: "https://github.com/gwendall/meteor-impersonate.git",
 });
 
-Package.onUse(function (api, where) {
+Package.onUse(function(api, where) {
 
   api.use([
     "accounts-base@1.2.2",
     "reactive-var@1.0.6",
     "templating@1.1.5",
     "gwendall:body-events@0.1.6",
-    "tracker@1.2.0"
+    "tracker@1.2.0",
   ], "client");
 
   api.use([
+    'ecmascript',
     "random@1.0.5",
     "alanning:roles@1.2.14",
   ]);
 
   api.addFiles([
-    "server/lib.js"
+    "server/lib.js",
   ], "server");
 
   api.addFiles([
-    "client/lib.js"
+    "client/lib.js",
   ], "client");
 
   api.export("Impersonate");
