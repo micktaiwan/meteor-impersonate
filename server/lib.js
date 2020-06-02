@@ -3,17 +3,22 @@ Impersonate = {
   adminGroups: [], // { role: "admin", group: "organization" }
 };
 
-let originalUserId = null;
-export const isImpersonating = function() {
-  if(!originalUserId) return false;
-  return Meteor.userId() !== originalUserId;
-};
+
+// 31 mai 2020
+// Ca ne peut pas marcher si on a une seule variable globale pour tout le monde
+// Je commente
+
+// let originalUserId = null;
+// export const isImpersonating = function() {
+//   if(!originalUserId) return false;
+//   return Meteor.userId() !== originalUserId;
+// };
 
 Meteor.methods({
   impersonate: function(params) {
 
     var currentUser = this.userId;
-    if(!originalUserId) originalUserId = this.userId;
+    // if(!originalUserId) originalUserId = this.userId;
     check(currentUser, String);
     check(params, Object);
     check(params.toUser, String);
