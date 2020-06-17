@@ -8,17 +8,17 @@ Package.describe({
 Package.onUse(function(api, where) {
 
   api.use([
-    "accounts-base@1.2.2",
-    "reactive-var@1.0.6",
-    "templating@1.1.5",
+    "accounts-base",
+    "reactive-var",
+    "templating",
     "gwendall:body-events@0.1.6",
-    "tracker@1.2.0",
+    "tracker",
   ], "client");
 
   api.use([
     'ecmascript',
-    "random@1.0.5",
-    "alanning:roles@1.2.14",
+    "random",
+    "alanning:roles@3.2.3",
   ]);
 
   api.addFiles([
